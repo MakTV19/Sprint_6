@@ -22,7 +22,9 @@ class BasePage:
         self.driver.find_element(*locator).click()
 
     def add_text_to_element(self, locator, text):
-        self.find_element_with_wait(locator).send_keys(text)
+        element = self.driver.find_element(*locator)
+        element.clear()
+        element.send_keys(text)
 
     def get_text_from_element(self, locator):
         return self.find_element_with_wait(locator).text
@@ -39,7 +41,7 @@ class BasePage:
         self.wait.until(expected_conditions.visibility_of(element))
         self.wait.until(expected_conditions.element_to_be_clickable(locator))
 
-    def switch_to_new_window(self):
+    def switch_to_last_window(self):
         self.driver.switch_to.window(self.driver.window_handles[-1])
         self.wait.until(expected_conditions.url_changes(self.driver.current_url))
 
@@ -49,6 +51,10 @@ class BasePage:
         except:
             return False
 
+    def current_url_contains(self, text):
+        return text in self.driver.current_url
 
+    def wait_for_url_to_contain(self, text):
+        self.wait.until(expected_conditions.url_contains(text))
 
 

@@ -5,11 +5,13 @@ class OrderPageLocators:
     LAST_NAME_LOCATOR = (By.XPATH, '//input[@placeholder="* Фамилия"]')
     ADDRESS_LOCATOR = (By.XPATH, '//input[@placeholder="* Адрес: куда привезти заказ"]')
     STATION_INPUT_LOCATOR = (By.XPATH, '//input[@placeholder="* Станция метро"]')
+    STATION_OPTION_TEMPLATE = '//div[text()="{station}"]'
     NUMBER_LOCATOR = (By.XPATH, '//input[@placeholder="* Телефон: на него позвонит курьер"]')
     NEXT_BUTTON_LOCATOR = (By.XPATH, '//button[text()="Далее"]')
 
     DATE_INPUT_LOCATOR = (By.XPATH, '//input[@placeholder="* Когда привезти самокат"]')
     RENT_DROPDOWN_LOCATOR = (By.CLASS_NAME, 'Dropdown-control')
+    RENT_DAY_OPTION_TEMPLATE = '//div[contains(@class, "Dropdown-option") and text()="{rental_time}"]'
 
     COLOR_BLACK_LOCATOR = (By.ID, 'black')
     COLOR_GREY_LOCATOR = (By.ID, 'grey')

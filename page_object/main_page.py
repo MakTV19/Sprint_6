@@ -28,3 +28,15 @@ class MainPage(BasePage):
     @allure.step('Кликаем на логотип Яндекса')
     def click_yandex_logo(self):
         self.click_to_element(MainPageLocators.YANDEX_LOGO)
+
+    @allure.step('Начать заказ с..')
+    def start_order_from(self, entry_point):
+        if entry_point == "top_button":
+            locator = MainPageLocators.ORDER_BUTTON_UP
+        elif entry_point == "bottom_button":
+            locator = MainPageLocators.ORDER_BUTTON_DOWN
+        else:
+            raise ValueError(f"Неизвестная точка входа: {entry_point}")
+
+        self.scroll_to_element(locator)
+        self.click_to_element(locator)

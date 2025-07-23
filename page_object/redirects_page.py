@@ -7,8 +7,8 @@ class RedirectsPage(BasePage):
 
     @allure.step('Нажимаем на SCOOTER Logo')
     def click_scooter_logo(self):
-        self.driver.find_element(*MainPageLocators.SCOOTER_LOGO).click()
+        self.click_element(MainPageLocators.SCOOTER_LOGO)
 
     @allure.step('Нажимаем на YANDEX Logo')
     def click_yandex_logo(self):
-        self.driver.find_element(*MainPageLocators.YANDEX_LOGO).click()
+        self.click_element(MainPageLocators.YANDEX_LOGO)

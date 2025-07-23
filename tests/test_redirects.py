@@ -1,7 +1,6 @@
 import allure
 from selenium.webdriver.support import expected_conditions
 from locators.main_page_locators import MainPageLocators
-from page_object.base_page import BasePage
 
 @allure.title('Тесты на проверку редиректов')
 class TestRedirectsPage:

@@ -3,9 +3,9 @@ import allure
 import data
 
 
-@allure.title('Тесты оформления заказа с разными точками входа')
 class TestOrderPage:
 
+    @allure.title('Создание заказа через верхнюю и нижнюю кнопку')
     @pytest.mark.parametrize(
         'order_entry_point, order_data',
         [
